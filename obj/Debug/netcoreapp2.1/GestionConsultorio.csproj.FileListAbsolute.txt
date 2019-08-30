@@ -2,7 +2,6 @@ C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\bin\Debug\
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\bin\Debug\netcoreapp2.1\GestionConsultorio.runtimeconfig.json
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\bin\Debug\netcoreapp2.1\GestionConsultorio.runtimeconfig.dev.json
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\bin\Debug\netcoreapp2.1\GestionConsultorio.dll
-C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.csprojAssemblyReference.cache
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.csproj.CoreCompileInputs.cache
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.RazorAssemblyInfo.cache
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.RazorAssemblyInfo.cs
