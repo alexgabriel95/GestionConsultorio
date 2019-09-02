@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GestionConsultorio.Models
 {
-    public partial class gestionconsultorio_localContext : DbContext
+    public partial class DataContext : DbContext
     {
-        public gestionconsultorio_localContext()
+        public DataContext()
         {
         }
 
-        public gestionconsultorio_localContext(DbContextOptions<gestionconsultorio_localContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
