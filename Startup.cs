@@ -39,6 +39,10 @@ namespace GestionConsultorio
             var connection = "server=localhost;user=root;database=gestionconsultorio_local;";
             services.AddDbContext<DataContext>(options => options.UseMySql(connection));
 
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
