@@ -16,7 +16,7 @@ namespace GestionConsultorio.Models
         public string Controller { get; set; }
         public string Action { get; set; }
 
-        public ICollection<Menupaginaset> Menupaginaset { get; set; }
-        public ICollection<Perfilpaginaset> Perfilpaginaset { get; set; }
+        public virtual ICollection<Menupaginaset> Menupaginaset { get; set; }
+        public virtual ICollection<Perfilpaginaset> Perfilpaginaset { get; set; }
     }
 }

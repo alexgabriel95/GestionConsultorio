@@ -18,10 +18,10 @@ namespace GestionConsultorio.Models
         public int SessionTimeOut { get; set; }
         public int? TipoPerfil { get; set; }
 
-        public Usuarioset Usuarioset { get; set; }
-        public ICollection<Perfilpaginaset> Perfilpaginaset { get; set; }
-        public ICollection<Perfilpermisoset> Perfilpermisoset { get; set; }
-        public ICollection<Puedecrearset> PuedecrearsetPerfilAcrearNavigation { get; set; }
-        public ICollection<Puedecrearset> PuedecrearsetPuedeCrearNavigation { get; set; }
+        public virtual Usuarioset Usuarioset { get; set; }
+        public virtual ICollection<Perfilpaginaset> Perfilpaginaset { get; set; }
+        public virtual ICollection<Perfilpermisoset> Perfilpermisoset { get; set; }
+        public virtual ICollection<Puedecrearset> PuedecrearsetPerfilAcrearNavigation { get; set; }
+        public virtual ICollection<Puedecrearset> PuedecrearsetPuedeCrearNavigation { get; set; }
     }
 }

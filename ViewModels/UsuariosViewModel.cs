@@ -40,7 +40,6 @@ namespace GestionConsultorio.ViewModels
         public string Email { get; set; }
         public string Telefono { get; set; }
         public int PerfilId { get; set; }
-        public string Dv { get; set; }
         public IEnumerable<SelectListItem> Perfiles { get; set; }
         public IEnumerable<SelectListItem> TiposDocDdl { get; set; }
 
