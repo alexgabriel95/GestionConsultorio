@@ -41,6 +41,16 @@ namespace GestionConsultorio
 
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<Models.Entities.IDbContext, DataContext>();
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(opt => {
+                    opt.SerializerSettings.ReferenceLoopHandling =
+                        Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
+            services.AddDistributedMemoryCache();
+
 
 
         }
