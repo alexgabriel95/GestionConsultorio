@@ -14,15 +14,14 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GestionConsultorio.Controllers
 {
-    public class HomeController : Controller
-        //GestionConsultorioController
+    public class HomeController : GestionConsultorioController
     {
 
-        //private readonly ILoggerHelper _logger;
-        //public HomeController(DataContext context, ILoggerHelper logger) : base(context)
-        //{
-        //    _logger = logger;
-        //}
+        private readonly ILoggerHelper _logger;
+        public HomeController(DataContext context, ILoggerHelper logger) : base(context)
+        {
+            _logger = logger;
+        }
         public IActionResult Index()
         {
             return View();

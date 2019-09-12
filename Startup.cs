@@ -44,6 +44,8 @@ namespace GestionConsultorio
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<Models.Entities.IDbContext, DataContext>();            
             services.AddScoped<ILoggerHelper, LoggerHelper>();
+            services.AddScoped<IViewRenderService, ViewRenderService>();
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
