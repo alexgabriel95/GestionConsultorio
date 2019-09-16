@@ -1,10 +1,11 @@
 ﻿using System;
+using GestionConsultorio.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GestionConsultorio.Models
 {
-    public partial class DataContext : DbContext
+    public partial class DataContext : DbContext, IDbContext
     {
         public DataContext()
         {
@@ -688,14 +689,14 @@ namespace GestionConsultorio.Models
 
                 entity.Property(e => e.UsuarioIdBaja).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdNavigation)
+                entity.HasOne(d => d.Perfil)
                     .WithOne(p => p.Usuarioset)
                     .HasForeignKey<Usuarioset>(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_UsuarioPerfil");
 
-                entity.HasOne(d => d.Id1)
-                    .WithOne(p => p.InverseId1)
+                entity.HasOne(d => d.UsuarioAlta)
+                    .WithOne(p => p.UsuarioBaja)
                     .HasForeignKey<Usuarioset>(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_UsuarioBaja");

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace GestionConsultorio.Models
 {
     public partial class Usuarioset
@@ -28,13 +29,13 @@ namespace GestionConsultorio.Models
         public int? UsuarioIdAlta { get; set; }
         public int? UsuarioIdBaja { get; set; }
 
-        public Usuarioset Id1 { get; set; }
-        public Perfilset IdNavigation { get; set; }
-        public Atencionset Atencionset { get; set; }
-        public Usuarioset InverseId1 { get; set; }
-        public ICollection<Contactoset> ContactosetUsuarioIdAltaNavigation { get; set; }
-        public ICollection<Contactoset> ContactosetUsuarioIdBajaNavigation { get; set; }
-        public ICollection<Especialidadusuarioset> Especialidadusuarioset { get; set; }
-        public ICollection<Notificacionusuarioset> Notificacionusuarioset { get; set; }
+        public virtual Usuarioset UsuarioAlta { get; set; }
+        public virtual Perfilset Perfil { get; set; }
+        public virtual Atencionset Atencionset { get; set; }
+        public virtual Usuarioset UsuarioBaja { get; set; }
+        public virtual ICollection<Contactoset> ContactosetUsuarioIdAltaNavigation { get; set; }
+        public virtual ICollection<Contactoset> ContactosetUsuarioIdBajaNavigation { get; set; }
+        public virtual ICollection<Especialidadusuarioset> Especialidadusuarioset { get; set; }
+        public virtual ICollection<Notificacionusuarioset> Notificacionusuarioset { get; set; }
     }
 }

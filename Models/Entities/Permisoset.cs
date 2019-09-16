@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace GestionConsultorio.Models
 {
+    [JsonObject(IsReference = true)]
     public partial class Permisoset
     {
         public Permisoset()

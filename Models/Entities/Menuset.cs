@@ -15,6 +15,6 @@ namespace GestionConsultorio.Models
         public string IconClass { get; set; }
         public string Order { get; set; }
 
-        public ICollection<Menupaginaset> Menupaginaset { get; set; }
+        public virtual ICollection<Menupaginaset> Menupaginaset { get; set; }
     }
 }

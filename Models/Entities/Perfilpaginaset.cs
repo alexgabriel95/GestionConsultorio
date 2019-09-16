@@ -8,7 +8,7 @@ namespace GestionConsultorio.Models
         public int PerfilId { get; set; }
         public int PaginaId { get; set; }
 
-        public Paginaset Pagina { get; set; }
-        public Perfilset Perfil { get; set; }
+        public virtual Paginaset Pagina { get; set; }
+        public virtual Perfilset Perfil { get; set; }
     }
 }
