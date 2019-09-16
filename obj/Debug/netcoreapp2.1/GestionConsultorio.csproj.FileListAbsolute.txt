@@ -30,3 +30,4 @@ C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.pdb
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.csproj.CopyComplete
 C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\GestionConsultorio.csprojAssemblyReference.cache
+C:\Users\alex.rios\source\repos\GestionConsultorio\GestionConsultorio\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Index.g.cshtml.cs

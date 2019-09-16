@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using GestionConsultorio.Models;
+using GestionConsultorio.Helpers;
 
 namespace GestionConsultorio
 {
@@ -41,7 +42,10 @@ namespace GestionConsultorio
 
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<Models.Entities.IDbContext, DataContext>();
+            services.AddScoped<Models.Entities.IDbContext, DataContext>();            
+            services.AddScoped<ILoggerHelper, LoggerHelper>();
+            services.AddScoped<IViewRenderService, ViewRenderService>();
+
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
