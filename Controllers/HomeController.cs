@@ -5,11 +5,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GestionConsultorio.Models;
+using GestionConsultorio.Models.Entities;
+using System.Security.Claims;
+using GestionConsultorio.Helpers;
+using GestionConsultorio.ViewModels;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GestionConsultorio.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : GestionConsultorioController
     {
+
+        private readonly ILoggerHelper _logger;
+        public HomeController(DataContext context, ILoggerHelper logger) : base(context)
+        {
+            _logger = logger;
+        }
         public IActionResult Index()
         {
             return View();

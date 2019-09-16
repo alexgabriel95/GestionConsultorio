@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 using GestionConsultorio.Models.Dto;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using GestionConsultorio.Models.Entities;
+using GestionConsultorio.Models.LS.Comp.Encriptador;
 
 namespace GestionConsultorio.Models
 {
     public partial class Usuarioset
     {
+        //public string NombreCompleto()
+        //{
+        //    return Nombre.Desencriptar() + " " + Apellido.Desencriptar();
+        //}
 
         public static IEnumerable<SelectListItem> ObtenerTiposDoc(IDbContext db)
         {

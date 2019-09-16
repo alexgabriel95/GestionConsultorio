@@ -1,0 +1,118 @@
+﻿@using GestionConsultorio.Controllers
+@using GestionConsultorio.Helpers
+@using Microsoft.AspNetCore.Http
+@model List<GestionConsultorio.ViewModels.UsuariosViewModel>
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Index";
+    var usuarioLogueado = GestionConsultorioController.GetUsuarioLogueado(HttpContextAccessor.HttpContext);
+}
+
+
+
+<h2 class="col-md-8">Listado de usuarios</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="wrapper">
+    <div style="margin-left:-3%;margin-right:3%;">
+        <div style="width: 110%; overflow-x: auto; padding: 3.5%; padding-right:6%; padding-left:2%;">
+            <table id="tablaUsuarios" class="table table-striped table-bordered table-hover table-responsive" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo de documento</th>
+                        <th>Nro documento</th>
+                        <th>Mail</th>
+                        <th>Telefono</th>
+                        <th>Perfil</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+
+                    @foreach (var usuario in Model)
+                    {
+
+                        <tr>
+                            <td>@usuario.Nombre</td>
+                            <td>@usuario.TipoDocumento</td>
+                            <td>@usuario.NumeroDocumento</td>
+                            <td>@usuario.Email</td>
+                            <td>@usuario.Telefono</td>
+                            <td>@usuario.Perfil.Nombre</td>
+                            <td>
+
+                                <div class="btn-group" style="float: right">
+                                    <button class="btn btn-xs btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                        Acciones
+                                        <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="@Url.Action("EditarUsuario", "Usuarios", new { usuarioId = usuario.Id })">Editar</a></li>
+                                        <li><a href='#' onclick="confirm('¿Está seguro que quiere dar de baja a ' + '@usuario.Nombre?') ? window.location = '@Url.Action("DarDeBajaUsuario", "Usuarios", new { usuarioId = usuario.Id })' : null" data-nombre="@usuario.Nombre">Dar de baja</a></li>
+                                        <li><a href='#' onclick="mostrarModalNuevaClave('@usuario.Id')">Blanquear Password</a></li>
+
+                                        <li><a href="#" onclick="asignarConce(this)" data-usuario="@usuario.Id" data-nombre="@usuario.Nombre">Asignar a concesionario</a></li>
+
+
+
+                                    </ul>
+                                </div>
+
+                            </td>
+                        </tr>
+
+
+
+
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+
+<div>
+    @Html.ActionLink("Volver atrás", "Index", "Home")
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#tablaUsuarios").DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "zeroRecords": "No hay registros para mostrar",
+                    "info": "Pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros)",
+                    "search": "Filtrar:"
+                },
+                responsive: { details: { type: 'column', target: 'tr' } }
+            });
+            $("#usuariosDeBaja").DataTable({
+
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "zeroRecords": "No hay registros para mostrar",
+                    "info": "Pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros)",
+                    "search": "Filtrar:"
+                },
+                responsive: { details: { type: 'column', target: 'tr' } }
+
+            });
+            $('#selectConces').multiSelect({
+                selectableHeader: "<div class='custom-header'>No asignados</div>",
+                selectionHeader: "<div class='custom-header'>Asignados</div>"
+            });
+        });
+        </script>
+    }
